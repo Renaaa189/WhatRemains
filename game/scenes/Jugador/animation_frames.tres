@@ -1,0 +1,114 @@
+[gd_resource type="SpriteFrames" format=3 uid="uid://bbnlk701ne41m"]
+
+[ext_resource type="Texture2D" uid="uid://b5sjhnx2fk4gn" path="res://assets/sprites/spritesheet pj principal-Recovered.png" id="1_03gt1"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_34dds"]
+atlas = ExtResource("1_03gt1")
+region = Rect2(0, 128, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_iryki"]
+atlas = ExtResource("1_03gt1")
+region = Rect2(0, 192, 63, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_55k31"]
+atlas = ExtResource("1_03gt1")
+region = Rect2(63, 192, 63, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_jvchb"]
+atlas = ExtResource("1_03gt1")
+region = Rect2(0, 64, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_n223b"]
+atlas = ExtResource("1_03gt1")
+region = Rect2(64, 64, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_bg1fj"]
+atlas = ExtResource("1_03gt1")
+region = Rect2(128, 64, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_fa4dp"]
+atlas = ExtResource("1_03gt1")
+region = Rect2(0, 0, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_32ovw"]
+atlas = ExtResource("1_03gt1")
+region = Rect2(64, 0, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_3cd2f"]
+atlas = ExtResource("1_03gt1")
+region = Rect2(128, 0, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_iqgwf"]
+atlas = ExtResource("1_03gt1")
+region = Rect2(192, 0, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_d4d3e"]
+atlas = ExtResource("1_03gt1")
+region = Rect2(64, 128, 64, 64)
+
+[resource]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_34dds")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_34dds")
+}],
+"loop": 1,
+"name": &"Caer",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_iryki")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_55k31")
+}],
+"loop": 1,
+"name": &"Caminar",
+"speed": 3.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_jvchb")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_n223b")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_bg1fj")
+}],
+"loop": 1,
+"name": &"Golpear",
+"speed": 8.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_fa4dp")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_32ovw")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_3cd2f")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_iqgwf")
+}],
+"loop": 1,
+"name": &"Idle",
+"speed": 2.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_d4d3e")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_d4d3e")
+}],
+"loop": 1,
+"name": &"Saltar",
+"speed": 2.0
+}]

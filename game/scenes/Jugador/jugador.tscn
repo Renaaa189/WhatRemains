@@ -1,0 +1,23 @@
+[gd_scene format=3 uid="uid://b4c3xwy1wvrou"]
+
+[ext_resource type="Script" uid="uid://cmhbdwlt44u11" path="res://scenes/Jugador/jugador.gd" id="1_pxqnj"]
+[ext_resource type="SpriteFrames" uid="uid://bbnlk701ne41m" path="res://scenes/Jugador/animation_frames.tres" id="1_qi77d"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_u04hk"]
+size = Vector2(26, 58)
+
+[node name="Jugador" type="CharacterBody2D" unique_id=1052281432 node_paths=PackedStringArray("animacion", "area_2d")]
+script = ExtResource("1_pxqnj")
+animacion = NodePath("Animaciones")
+area_2d = NodePath("Area2D")
+
+[node name="Animaciones" type="AnimatedSprite2D" parent="." unique_id=1281163261]
+sprite_frames = ExtResource("1_qi77d")
+animation = &"Golpear"
+frame_progress = 0.23457198
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1564421455]
+position = Vector2(2, 3)
+shape = SubResource("RectangleShape2D_u04hk")
+
+[node name="Area2D" type="Area2D" parent="." unique_id=762515373]

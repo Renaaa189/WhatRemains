@@ -1,0 +1,25 @@
+[gd_scene format=3 uid="uid://bia0pvly0yomu"]
+
+[ext_resource type="Texture2D" uid="uid://d3uyhi336i8lr" path="res://icon.svg" id="1_svva4"]
+[ext_resource type="PackedScene" uid="uid://b4c3xwy1wvrou" path="res://scenes/Jugador/jugador.tscn" id="2_k880e"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_s0bqv"]
+size = Vector2(1158, 70)
+
+[node name="EscenaPrincipal" type="Node2D" unique_id=1370056344]
+
+[node name="Camera2D" type="Camera2D" parent="." unique_id=1061907843]
+zoom = Vector2(1.935, 1.935)
+
+[node name="StaticBody2D" type="StaticBody2D" parent="." unique_id=105404196]
+
+[node name="Icon" type="Sprite2D" parent="StaticBody2D" unique_id=585684093]
+position = Vector2(8, 100.999985)
+scale = Vector2(9.015625, 0.5546875)
+texture = ExtResource("1_svva4")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D" unique_id=1373556913]
+position = Vector2(6, 99)
+shape = SubResource("RectangleShape2D_s0bqv")
+
+[node name="Jugador" parent="." unique_id=1052281432 instance=ExtResource("2_k880e")]
