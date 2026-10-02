@@ -1,5 +1,7 @@
 extends CharacterBody2D
 
+# Despues vamos a ponerle límites (limit_left, limit_right, etc.) para que cuando llegue al final del nivel la cámara se detenga aunque el jugador siga avanzando.
+
 #signal personaje_muerto
 
 @export var animacion: AnimatedSprite2D

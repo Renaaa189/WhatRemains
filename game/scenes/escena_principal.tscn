@@ -20,17 +20,6 @@ texture = ExtResource("1_svva4")
 position = Vector2(9, 177)
 shape = SubResource("RectangleShape2D_s0bqv")
 
-[node name="Piso provisional2" type="StaticBody2D" parent="." unique_id=1419644542]
-
-[node name="Icon" type="Sprite2D" parent="Piso provisional2" unique_id=1234735097]
-position = Vector2(1192, 126)
-scale = Vector2(9.015625, 0.5546875)
-texture = ExtResource("1_svva4")
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Piso provisional2" unique_id=1225085202]
-position = Vector2(1190, 125)
-shape = SubResource("RectangleShape2D_s0bqv")
-
 [node name="Jugador" parent="." unique_id=1052281432 instance=ExtResource("2_k880e")]
 
 [node name="CanvasLayer" type="CanvasLayer" parent="." unique_id=698734657]
