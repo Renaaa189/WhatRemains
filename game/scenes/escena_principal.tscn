@@ -2,24 +2,44 @@
 
 [ext_resource type="Texture2D" uid="uid://d3uyhi336i8lr" path="res://icon.svg" id="1_svva4"]
 [ext_resource type="PackedScene" uid="uid://b4c3xwy1wvrou" path="res://scenes/Jugador/jugador.tscn" id="2_k880e"]
+[ext_resource type="Texture2D" uid="uid://cwhkvyawu03h5" path="res://assets/sprites/fondo_ciudad.png" id="3_4h067"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_s0bqv"]
 size = Vector2(1158, 70)
 
 [node name="EscenaPrincipal" type="Node2D" unique_id=1370056344]
 
-[node name="Camera2D" type="Camera2D" parent="." unique_id=1061907843]
-zoom = Vector2(1.935, 1.935)
+[node name="Piso provisional" type="StaticBody2D" parent="." unique_id=105404196]
 
-[node name="StaticBody2D" type="StaticBody2D" parent="." unique_id=105404196]
-
-[node name="Icon" type="Sprite2D" parent="StaticBody2D" unique_id=585684093]
-position = Vector2(8, 100.999985)
+[node name="Icon" type="Sprite2D" parent="Piso provisional" unique_id=585684093]
+position = Vector2(20, 182)
 scale = Vector2(9.015625, 0.5546875)
 texture = ExtResource("1_svva4")
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D" unique_id=1373556913]
-position = Vector2(6, 99)
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Piso provisional" unique_id=1373556913]
+position = Vector2(9, 177)
+shape = SubResource("RectangleShape2D_s0bqv")
+
+[node name="Piso provisional2" type="StaticBody2D" parent="." unique_id=1419644542]
+
+[node name="Icon" type="Sprite2D" parent="Piso provisional2" unique_id=1234735097]
+position = Vector2(1192, 126)
+scale = Vector2(9.015625, 0.5546875)
+texture = ExtResource("1_svva4")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Piso provisional2" unique_id=1225085202]
+position = Vector2(1190, 125)
 shape = SubResource("RectangleShape2D_s0bqv")
 
 [node name="Jugador" parent="." unique_id=1052281432 instance=ExtResource("2_k880e")]
+
+[node name="CanvasLayer" type="CanvasLayer" parent="." unique_id=698734657]
+layer = -1
+
+[node name="Fondo" type="TextureRect" parent="CanvasLayer" unique_id=1519688629]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("3_4h067")
