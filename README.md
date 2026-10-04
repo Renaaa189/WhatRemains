@@ -1,5 +1,5 @@
 
-<img src="./misc/images/WhatRemains.pdf" alt="banner juego">
+<img src="./misc/images/WhatRemains.png" alt="banner juego">
 
 What Remains es un videojuego 2D de supervivencia y horror
 
