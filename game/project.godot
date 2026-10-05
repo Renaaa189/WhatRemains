@@ -10,7 +10,7 @@ config_version=5
 
 [application]
 
-config/name="Parasite"
+config/name="WhatRemains"
 run/main_scene="uid://bia0pvly0yomu"
 config/features=PackedStringArray("4.7", "GL Compatibility")
 config/icon="res://icon.svg"

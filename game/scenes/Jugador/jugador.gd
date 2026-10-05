@@ -9,7 +9,7 @@ extends CharacterBody2D
 #@export var material_rojo: ShaderMaterial
 
 const SPEED = 150.0
-const JUMP_VELOCITY = -350.0
+const JUMP_VELOCITY = -400.0
 #var _muerto: bool 
 
 var saltando = false
