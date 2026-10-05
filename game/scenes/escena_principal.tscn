@@ -1,5 +1,6 @@
 [gd_scene format=3 uid="uid://bia0pvly0yomu"]
 
+[ext_resource type="AudioStream" uid="uid://b0gpxsxotol1o" path="res://assets/music/Ciudad.mp3" id="1_4dcfo"]
 [ext_resource type="Texture2D" uid="uid://d3uyhi336i8lr" path="res://icon.svg" id="1_svva4"]
 [ext_resource type="PackedScene" uid="uid://b4c3xwy1wvrou" path="res://scenes/Jugador/jugador.tscn" id="2_k880e"]
 [ext_resource type="Texture2D" uid="uid://cwhkvyawu03h5" path="res://assets/sprites/fondo_ciudad.png" id="3_4h067"]
@@ -20,6 +21,28 @@ texture = ExtResource("1_svva4")
 position = Vector2(9, 177)
 shape = SubResource("RectangleShape2D_s0bqv")
 
+[node name="Piso provisional2" type="StaticBody2D" parent="." unique_id=17620750]
+
+[node name="Icon" type="Sprite2D" parent="Piso provisional2" unique_id=1719972674]
+position = Vector2(1231, 176)
+scale = Vector2(8.859375, 0.5546875)
+texture = ExtResource("1_svva4")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Piso provisional2" unique_id=1877158497]
+position = Vector2(1230, 186)
+shape = SubResource("RectangleShape2D_s0bqv")
+
+[node name="Piso provisional3" type="StaticBody2D" parent="." unique_id=1422854581]
+
+[node name="Icon" type="Sprite2D" parent="Piso provisional3" unique_id=1774971159]
+position = Vector2(2454, 197)
+scale = Vector2(9.015625, 0.5546875)
+texture = ExtResource("1_svva4")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Piso provisional3" unique_id=944305118]
+position = Vector2(2436, 201)
+shape = SubResource("RectangleShape2D_s0bqv")
+
 [node name="Jugador" parent="." unique_id=1052281432 instance=ExtResource("2_k880e")]
 
 [node name="CanvasLayer" type="CanvasLayer" parent="." unique_id=698734657]
@@ -32,3 +55,8 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 texture = ExtResource("3_4h067")
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="." unique_id=1632065694]
+stream = ExtResource("1_4dcfo")
+autoplay = true
+bus = &"Musica de fondo"
