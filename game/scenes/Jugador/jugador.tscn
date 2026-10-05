@@ -6,10 +6,9 @@
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_u04hk"]
 size = Vector2(26, 58)
 
-[node name="Jugador" type="CharacterBody2D" unique_id=1052281432 node_paths=PackedStringArray("animacion", "area_2d")]
+[node name="Jugador" type="CharacterBody2D" unique_id=1052281432 node_paths=PackedStringArray("animacion")]
 script = ExtResource("1_pxqnj")
 animacion = NodePath("Animaciones")
-area_2d = NodePath("")
 
 [node name="Animaciones" type="AnimatedSprite2D" parent="." unique_id=1281163261]
 sprite_frames = ExtResource("1_qi77d")
@@ -22,3 +21,6 @@ shape = SubResource("RectangleShape2D_u04hk")
 
 [node name="Camera2D" type="Camera2D" parent="." unique_id=1189589098]
 zoom = Vector2(2.13, 2.13)
+limit_left = 0
+limit_right = 1150
+limit_bottom = 800

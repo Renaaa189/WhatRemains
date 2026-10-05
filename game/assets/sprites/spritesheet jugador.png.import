@@ -3,15 +3,15 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://b5sjhnx2fk4gn"
-path="res://.godot/imported/spritesheet pj principal-Recovered.png-3a7bc0d580662aac2caafd400b53f476.ctex"
+path="res://.godot/imported/spritesheet jugador.png-207c3d4db37e9702199a553c1e6a8a21.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/sprites/spritesheet pj principal-Recovered.png"
-dest_files=["res://.godot/imported/spritesheet pj principal-Recovered.png-3a7bc0d580662aac2caafd400b53f476.ctex"]
+source_file="res://assets/sprites/spritesheet jugador.png"
+dest_files=["res://.godot/imported/spritesheet jugador.png-207c3d4db37e9702199a553c1e6a8a21.ctex"]
 
 [params]
 

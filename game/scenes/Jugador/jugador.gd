@@ -40,10 +40,6 @@ func _physics_process(delta: float) -> void:
 	else:
 		velocity.x = move_toward(velocity.x, 0, SPEED)
 
-	if golpeando and velocity.x != 0:
-		golpeando = false
-		animacion.play("Caminar")
-
 	if Input.is_action_just_pressed("saltar") and is_on_floor() and not saltando:
 		saltando = true
 		golpeando = false
