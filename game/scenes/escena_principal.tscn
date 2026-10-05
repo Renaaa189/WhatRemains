@@ -1,28 +1,19 @@
 [gd_scene format=3 uid="uid://bia0pvly0yomu"]
 
 [ext_resource type="AudioStream" uid="uid://b0gpxsxotol1o" path="res://assets/music/Ciudad.mp3" id="1_4dcfo"]
-[ext_resource type="Texture2D" uid="uid://d3uyhi336i8lr" path="res://icon.svg" id="1_svva4"]
 [ext_resource type="PackedScene" uid="uid://b4c3xwy1wvrou" path="res://scenes/Jugador/jugador.tscn" id="2_k880e"]
-
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_s0bqv"]
-size = Vector2(1158, 70)
+[ext_resource type="PackedScene" uid="uid://rwvom5lfx28u" path="res://scenes/niveles/escena_ciudad.tscn" id="3_4h067"]
 
 [node name="EscenaPrincipal" type="Node2D" unique_id=1370056344]
 
-[node name="Piso provisional" type="StaticBody2D" parent="." unique_id=105404196]
-
-[node name="Icon" type="Sprite2D" parent="Piso provisional" unique_id=585684093]
-position = Vector2(20, 182)
-scale = Vector2(9.015625, 0.5546875)
-texture = ExtResource("1_svva4")
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Piso provisional" unique_id=1373556913]
-position = Vector2(9, 177)
-shape = SubResource("RectangleShape2D_s0bqv")
-
 [node name="Jugador" parent="." unique_id=1052281432 instance=ExtResource("2_k880e")]
+position = Vector2(81, 70)
 
 [node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="." unique_id=1632065694]
 stream = ExtResource("1_4dcfo")
 autoplay = true
 bus = &"Musica de fondo"
+
+[node name="Node2D" type="Node2D" parent="." unique_id=56805840]
+
+[node name="EscenaCiudad" parent="Node2D" unique_id=377172697 instance=ExtResource("3_4h067")]

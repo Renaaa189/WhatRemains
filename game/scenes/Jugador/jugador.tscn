@@ -12,8 +12,8 @@ animacion = NodePath("Animaciones")
 
 [node name="Animaciones" type="AnimatedSprite2D" parent="." unique_id=1281163261]
 sprite_frames = ExtResource("1_qi77d")
-animation = &"Golpear"
-frame_progress = 0.35091412
+animation = &"Caminar"
+frame_progress = 0.073417164
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1564421455]
 position = Vector2(2, 3)
@@ -22,5 +22,5 @@ shape = SubResource("RectangleShape2D_u04hk")
 [node name="Camera2D" type="Camera2D" parent="." unique_id=1189589098]
 zoom = Vector2(2.13, 2.13)
 limit_left = 0
-limit_right = 2900
+limit_right = 5800
 limit_bottom = 800
