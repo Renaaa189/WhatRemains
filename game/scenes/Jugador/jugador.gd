@@ -14,6 +14,7 @@ const JUMP_VELOCITY = -400.0
 
 var saltando = false
 var golpeando = false
+var tiempo_paso = 0.0
 
 func _ready() -> void:
 	animacion.sprite_frames.set_animation_loop("Golpear", false)
@@ -44,6 +45,7 @@ func _physics_process(delta: float) -> void:
 		saltando = true
 		golpeando = false
 		animacion.play("Saltar")
+		$Sonidos/Salto.play()
 
 		await get_tree().create_timer(0.09).timeout
 
@@ -53,17 +55,26 @@ func _physics_process(delta: float) -> void:
 	if Input.is_action_just_pressed("golpear") and is_on_floor() and not saltando and not golpeando:
 		golpeando = true
 		animacion.play("Golpear")
+		$Sonidos/Golpe.play()
 
 	if not saltando:
 		if not is_on_floor():
 			golpeando = false
 			animacion.play("Caer")
+			tiempo_paso = 0.0
 		elif golpeando:
-			pass
+			tiempo_paso = 0.0
 		elif velocity.x != 0:
 			animacion.play("Caminar")
+
+			tiempo_paso -= delta
+
+			if tiempo_paso <= 0:
+				$Sonidos/Caminar.play()
+				tiempo_paso = 0.35
 		else:
 			animacion.play("Idle")
+			tiempo_paso = 0.0
 
 	move_and_slide()
 
@@ -86,3 +97,6 @@ func _on_animation_finished() -> void:
 	#personaje_muerto.emit()
 	#
 	#ControladorGlobal.sumar_muerte()
+	
+	# $Sonidos/Recibir daño.play()
+	# $Sonidos/Morir.play()

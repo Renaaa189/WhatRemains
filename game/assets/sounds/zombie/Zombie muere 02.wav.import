@@ -1,0 +1,24 @@
+[remap]
+
+importer="wav"
+type="AudioStreamWAV"
+uid="uid://is5xl7v5jp73"
+path="res://.godot/imported/Zombie muere 02.wav-1262e8580853aae761037ae2410b8abd.sample"
+
+[deps]
+
+source_file="res://assets/sounds/zombie/Zombie muere 02.wav"
+dest_files=["res://.godot/imported/Zombie muere 02.wav-1262e8580853aae761037ae2410b8abd.sample"]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop_mode=0
+edit/loop_begin=0
+edit/loop_end=-1
+compress/mode=2
