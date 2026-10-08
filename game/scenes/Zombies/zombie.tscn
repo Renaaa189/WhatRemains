@@ -2,6 +2,11 @@
 
 [ext_resource type="Script" uid="uid://diwh3332vsblh" path="res://scripts/zombie.gd" id="1_1vlb3"]
 [ext_resource type="Texture2D" uid="uid://ct7biu6cuuo5p" path="res://assets/sprites/Zombie/Sprite-0001-Recovered.png" id="2_httt1"]
+[ext_resource type="AudioStream" uid="uid://drnhj8rjolsm7" path="res://assets/sounds/Zombie recibe daño 01.wav" id="3_pbqu0"]
+[ext_resource type="AudioStream" uid="uid://bce02h0cdioer" path="res://assets/sounds/Zombie recibe daño 02.wav" id="4_f36oq"]
+[ext_resource type="AudioStream" uid="uid://c4po0t10g078m" path="res://assets/sounds/Zombie recibe daño 03.wav" id="5_ophme"]
+[ext_resource type="AudioStream" uid="uid://mfta8aed242c" path="res://assets/sounds/Zombie gruñido 01.wav" id="6_2gox1"]
+[ext_resource type="AudioStream" uid="uid://bxvdduiruqxeb" path="res://assets/sounds/Zombie gruñido 02.wav" id="7_15ps0"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_httt1"]
 atlas = ExtResource("2_httt1")
@@ -19,21 +24,21 @@ region = Rect2(132, 0, 66, 77)
 atlas = ExtResource("2_httt1")
 region = Rect2(198, 0, 66, 77)
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_xepks"]
+[sub_resource type="AtlasTexture" id="AtlasTexture_p0bet"]
 atlas = ExtResource("2_httt1")
-region = Rect2(0, 0, 66, 77)
+region = Rect2(0, 0, 64, 64)
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_4gx57"]
+[sub_resource type="AtlasTexture" id="AtlasTexture_fy70b"]
 atlas = ExtResource("2_httt1")
-region = Rect2(66, 0, 66, 77)
+region = Rect2(64, 0, 64, 64)
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_ycv6i"]
+[sub_resource type="AtlasTexture" id="AtlasTexture_3f2ev"]
 atlas = ExtResource("2_httt1")
-region = Rect2(132, 0, 66, 77)
+region = Rect2(128, 0, 64, 64)
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_pjjxt"]
+[sub_resource type="AtlasTexture" id="AtlasTexture_qja6l"]
 atlas = ExtResource("2_httt1")
-region = Rect2(198, 0, 66, 77)
+region = Rect2(192, 0, 64, 64)
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_1vlb3"]
 animations = [{
@@ -61,27 +66,42 @@ animations = [{
 }, {
 "frames": [{
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_xepks")
+"texture": SubResource("AtlasTexture_p0bet")
 }, {
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_4gx57")
+"texture": SubResource("AtlasTexture_fy70b")
 }, {
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_ycv6i")
+"texture": SubResource("AtlasTexture_3f2ev")
 }, {
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_pjjxt")
+"texture": SubResource("AtlasTexture_qja6l")
 }],
 "loop": 1,
 "name": &"walk",
-"speed": 5.0
+"speed": 3.0
 }]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_4h067"]
+size = Vector2(25, 53)
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_g4v7s"]
 radius = 200.0
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_ftooa"]
 radius = 40.0
+
+[sub_resource type="AudioStreamRandomizer" id="AudioStreamRandomizer_u04hk"]
+playback_mode = 1
+streams_count = 3
+stream_0/stream = ExtResource("3_pbqu0")
+stream_1/stream = ExtResource("4_f36oq")
+stream_2/stream = ExtResource("5_ophme")
+
+[sub_resource type="AudioStreamRandomizer" id="AudioStreamRandomizer_j3pel"]
+streams_count = 2
+stream_0/stream = ExtResource("6_2gox1")
+stream_1/stream = ExtResource("7_15ps0")
 
 [node name="Main" type="Node2D" unique_id=1889586094]
 
@@ -98,9 +118,12 @@ script = ExtResource("1_1vlb3")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="Zombie" unique_id=608939670]
 sprite_frames = SubResource("SpriteFrames_1vlb3")
-animation = &"attack"
+animation = &"walk"
+frame_progress = 0.93851566
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Zombie" unique_id=1526612004]
+position = Vector2(0.5, -0.5)
+shape = SubResource("RectangleShape2D_4h067")
 
 [node name="DetectionArea" type="Area2D" parent="Zombie" unique_id=331236918]
 collision_layer = 0
@@ -119,7 +142,25 @@ shape = SubResource("CircleShape2D_ftooa")
 [node name="AttackTimer" type="Timer" parent="Zombie" unique_id=43085577]
 one_shot = true
 
+[node name="Sonidos" type="Node2D" parent="Zombie" unique_id=757207467]
+
+[node name="Recibir daño" type="AudioStreamPlayer2D" parent="Zombie/Sonidos" unique_id=322359354]
+stream = SubResource("AudioStreamRandomizer_u04hk")
+bus = &"Enemigos"
+
+[node name="Gruñir" type="AudioStreamPlayer2D" parent="Zombie/Sonidos" unique_id=1416199259]
+stream = SubResource("AudioStreamRandomizer_j3pel")
+autoplay = true
+bus = &"Enemigos"
+
+[node name="Timer" type="Timer" parent="Zombie/Sonidos/Gruñir" unique_id=1868207428]
+wait_time = 4.0
+autostart = true
+
+[node name="Morir" type="AudioStreamPlayer2D" parent="Zombie/Sonidos" unique_id=1957281795]
+
 [connection signal="body_entered" from="Zombie/DetectionArea" to="Zombie" method="_on_detection_area_body_entered"]
 [connection signal="body_exited" from="Zombie/DetectionArea" to="Zombie" method="_on_detection_area_body_exited"]
 [connection signal="body_entered" from="Zombie/AttackArea" to="Zombie" method="_on_attack_area_body_entered"]
 [connection signal="body_exited" from="Zombie/AttackArea" to="Zombie" method="_on_attack_area_body_exited"]
+[connection signal="timeout" from="Zombie/Sonidos/Gruñir/Timer" to="Zombie" method="_on_timer_grunido_timeout"]

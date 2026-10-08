@@ -140,7 +140,6 @@ func _on_attack_body_exited(body):
 			player = null
 			current_state = State.PATROL
 
-
 func _on_attack_area_body_entered(body: Node2D) -> void:
 	pass # Replace with function body.
 
@@ -155,3 +154,8 @@ func _on_detection_area_body_entered(body: Node2D) -> void:
 
 func _on_detection_area_body_exited(body: Node2D) -> void:
 	pass # Replace with function body.
+
+
+
+func _on_timer_grunido_timeout() -> void:
+	$"Sonidos/Gruñir".play()

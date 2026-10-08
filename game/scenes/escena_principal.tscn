@@ -3,7 +3,6 @@
 [ext_resource type="AudioStream" uid="uid://b0gpxsxotol1o" path="res://assets/music/Ciudad.mp3" id="1_4dcfo"]
 [ext_resource type="PackedScene" uid="uid://b4c3xwy1wvrou" path="res://scenes/Jugador/jugador.tscn" id="2_k880e"]
 [ext_resource type="PackedScene" uid="uid://rwvom5lfx28u" path="res://scenes/niveles/escena_ciudad.tscn" id="3_4h067"]
-[ext_resource type="PackedScene" uid="uid://do4y6etthnaq3" path="res://scenes/zombie.tscn" id="4_4dcfo"]
 
 [node name="EscenaPrincipal" type="Node2D" unique_id=1370056344]
 
@@ -19,6 +18,3 @@ bus = &"Musica de fondo"
 
 [node name="EscenaCiudad" parent="Node2D" unique_id=377172697 instance=ExtResource("3_4h067")]
 position = Vector2(-34, 0)
-
-[node name="Zombie" parent="." unique_id=1800657608 instance=ExtResource("4_4dcfo")]
-position = Vector2(496, -51)
