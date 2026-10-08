@@ -1,5 +1,5 @@
 extends CharacterBody2D
-
+signal zombie_muerto
 
 enum State {
 	PATROL,
@@ -17,6 +17,7 @@ var player: CharacterBody2D = null
 var player_in_detection := false
 var player_in_attack := false
 var patrol_direction := 1
+var vida = 3
 
 @onready var animated_sprite: AnimatedSprite2D = $AnimatedSprite2D
 
@@ -71,7 +72,21 @@ func patrol():
 	elif global_position.x <= patrol_left.global_position.x:
 		patrol_direction = 1
 
+func recibir_danio(cantidad):
+	vida -= cantidad
 
+	animated_sprite.modulate = Color(1, 0.3, 0.3)
+
+	if vida <= 0:
+		morir()
+		return
+
+	await get_tree().create_timer(0.15).timeout
+	animated_sprite.modulate = Color(1, 1, 1)
+	
+func morir():
+	set_physics_process(false)
+	zombie_muerto.emit()
 
 func chase():
 	if player == null:
@@ -97,6 +112,7 @@ func attack():
 
 	if attack_timer.is_stopped():
 		print("¡ATAQUE!")
+		player.recibir_danio(1)
 		attack_timer.start()
 
 func _on_detection_body_entered(body):

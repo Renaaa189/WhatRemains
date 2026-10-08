@@ -3,6 +3,8 @@
 [ext_resource type="AudioStream" uid="uid://b0gpxsxotol1o" path="res://assets/music/Ciudad.mp3" id="1_4dcfo"]
 [ext_resource type="PackedScene" uid="uid://b4c3xwy1wvrou" path="res://scenes/Jugador/jugador.tscn" id="2_k880e"]
 [ext_resource type="PackedScene" uid="uid://rwvom5lfx28u" path="res://scenes/niveles/escena_ciudad.tscn" id="3_4h067"]
+[ext_resource type="Script" uid="uid://3m6uoqdi0oc2" path="res://scenes/Zombies/zombie_spawner.gd" id="4_4dcfo"]
+[ext_resource type="PackedScene" uid="uid://do4y6etthnaq3" path="res://scenes/Zombies/zombie.tscn" id="5_4pgp8"]
 
 [node name="EscenaPrincipal" type="Node2D" unique_id=1370056344]
 
@@ -14,7 +16,22 @@ stream = ExtResource("1_4dcfo")
 autoplay = true
 bus = &"Musica de fondo"
 
-[node name="Node2D" type="Node2D" parent="." unique_id=56805840]
-
-[node name="EscenaCiudad" parent="Node2D" unique_id=377172697 instance=ExtResource("3_4h067")]
+[node name="EscenaCiudad" parent="." unique_id=377172697 instance=ExtResource("3_4h067")]
+visible = false
 position = Vector2(-34, 0)
+
+[node name="Playerspawner" type="Marker2D" parent="." unique_id=165779460]
+visible = false
+position = Vector2(184, 91)
+
+[node name="ZombieSpawner" type="Node2D" parent="." unique_id=978160331]
+visible = false
+position = Vector2(505, -4)
+script = ExtResource("4_4dcfo")
+zombie_scene = ExtResource("5_4pgp8")
+
+[node name="SpawnPoint" type="Marker2D" parent="ZombieSpawner" unique_id=483448897]
+position = Vector2(903, 37)
+
+[node name="Zombie" parent="." unique_id=1889586094 instance=ExtResource("5_4pgp8")]
+position = Vector2(390, 40)

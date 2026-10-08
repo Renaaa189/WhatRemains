@@ -6,16 +6,20 @@
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_u04hk"]
 size = Vector2(26, 58)
 
-[node name="Jugador" type="CharacterBody2D" unique_id=1052281432 node_paths=PackedStringArray("animacion") groups=["player"]]
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_s0bqv"]
+size = Vector2(92, 19)
+
+[node name="Jugador" type="CharacterBody2D" unique_id=1052281432 node_paths=PackedStringArray("animacion", "area_ataque") groups=["player"]]
 collision_layer = 2
 collision_mask = 5
 script = ExtResource("1_pxqnj")
 animacion = NodePath("Animaciones")
+area_ataque = NodePath("Area ataque")
 
 [node name="Animaciones" type="AnimatedSprite2D" parent="." unique_id=1281163261]
 sprite_frames = ExtResource("1_qi77d")
 animation = &"Caminar"
-frame_progress = 0.073417164
+frame_progress = 0.75949055
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1564421455]
 position = Vector2(2, 3)
@@ -26,3 +30,11 @@ zoom = Vector2(2.13, 2.13)
 limit_left = 0
 limit_right = 5800
 limit_bottom = 800
+
+[node name="Area ataque" type="Area2D" parent="." unique_id=1239401616]
+collision_layer = 2
+collision_mask = 4
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area ataque" unique_id=1593462726]
+position = Vector2(2, -2.5)
+shape = SubResource("RectangleShape2D_s0bqv")

@@ -79,8 +79,8 @@ speed_scale = 0.0
 randomness = 0.42
 process_material = SubResource("ParticleProcessMaterial_s0bqv")
 
-[node name="Zombue" parent="." unique_id=1889586094 instance=ExtResource("5_01ty1")]
-position = Vector2(714, 531)
+[node name="Zombie" parent="." unique_id=1889586094 instance=ExtResource("5_01ty1")]
+position = Vector2(310, 168)
 
 [node name="Jugador" parent="." unique_id=1052281432 instance=ExtResource("6_tylj0")]
-position = Vector2(1034, 663)
+position = Vector2(863, 115)
