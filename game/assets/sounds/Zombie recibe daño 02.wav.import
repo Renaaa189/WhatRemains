@@ -1,0 +1,24 @@
+[remap]
+
+importer="wav"
+type="AudioStreamWAV"
+uid="uid://bce02h0cdioer"
+path="res://.godot/imported/Zombie recibe daño 02.wav-30b5a0a16982474b05b56eeac891c1ba.sample"
+
+[deps]
+
+source_file="res://assets/sounds/Zombie recibe daño 02.wav"
+dest_files=["res://.godot/imported/Zombie recibe daño 02.wav-30b5a0a16982474b05b56eeac891c1ba.sample"]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop_mode=0
+edit/loop_begin=0
+edit/loop_end=-1
+compress/mode=2
