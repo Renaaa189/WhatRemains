@@ -6,7 +6,9 @@
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_u04hk"]
 size = Vector2(26, 58)
 
-[node name="Jugador" type="CharacterBody2D" unique_id=1052281432 node_paths=PackedStringArray("animacion")]
+[node name="Jugador" type="CharacterBody2D" unique_id=1052281432 node_paths=PackedStringArray("animacion") groups=["player"]]
+collision_layer = 2
+collision_mask = 5
 script = ExtResource("1_pxqnj")
 animacion = NodePath("Animaciones")
 
