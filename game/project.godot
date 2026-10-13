@@ -52,9 +52,9 @@ golpear={
 
 [layer_names]
 
-2d_physics/layer_1="Sólido"
-2d_physics/layer_2="Daño"
-2d_physics/layer_3="Jugador"
+2d_physics/layer_1="World"
+2d_physics/layer_2="Player"
+2d_physics/layer_3="Enemy"
 2d_physics/layer_4="Recolectable"
 
 [physics]

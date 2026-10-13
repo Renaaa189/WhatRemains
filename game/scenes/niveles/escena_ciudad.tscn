@@ -4,6 +4,8 @@
 [ext_resource type="TileSet" uid="uid://570avcc0oqcl" path="res://assets/sprites/ciudad/tileset_ciudad.tres" id="2_ks1q4"]
 [ext_resource type="Texture2D" uid="uid://t1pypb77rl3a" path="res://assets/sprites/ciudad/tileset_ciudad_fondo.png" id="3_2slam"]
 [ext_resource type="Texture2D" uid="uid://bmamx3jivsbhi" path="res://assets/sprites/ciudad/tileset_parque_fondo.png" id="4_vb7hp"]
+[ext_resource type="PackedScene" uid="uid://do4y6etthnaq3" path="res://scenes/Zombies/zombie.tscn" id="5_01ty1"]
+[ext_resource type="PackedScene" uid="uid://b4c3xwy1wvrou" path="res://scenes/Jugador/jugador.tscn" id="6_tylj0"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_vb7hp"]
 texture = ExtResource("3_2slam")
@@ -76,3 +78,9 @@ lifetime = 0.42
 speed_scale = 0.0
 randomness = 0.42
 process_material = SubResource("ParticleProcessMaterial_s0bqv")
+
+[node name="Zombie" parent="." unique_id=1889586094 instance=ExtResource("5_01ty1")]
+position = Vector2(310, 168)
+
+[node name="Jugador" parent="." unique_id=1052281432 instance=ExtResource("6_tylj0")]
+position = Vector2(863, 115)
